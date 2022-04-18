@@ -1,0 +1,325 @@
+html {
+    font-family: sans-serif
+}
+main p{
+    text-justify:auto;
+    text-align: center;
+    color: #2a6070;
+}
+.menu-info {
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+.recepta {
+    background-color: #c5e1ff;
+    margin-left:10%;
+    margin-right:10%;
+    text-decoration: 2px;
+    text-align: center;
+    text-decoration: underline white 2px;
+    border: white solid 2px;
+    display: block;
+    text-justify:auto;
+    padding-left: 5%;
+    clear: both;
+
+}
+.recepta p{
+    text-align: left;
+    color: #245b80
+}
+footer button{
+    background-color: #0069cc;
+    color: white;
+    text-decoration: none;
+    border-style:solid;
+    border-color:#66b3ff;
+}
+nav a{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+header .header-button button a{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+header .header-button li{
+    list-style: none;
+}
+
+.komunikat{
+    float: left;
+    display: block;
+    margin-right: 20px;
+    width: 120px;
+    height: 120px;
+}
+
+.komunikaty{
+    border-left : 5px solid white;
+    text-align: center;
+    width: 80%;
+    height: 700px;
+    background-color: #b7d7f4;
+    margin-left:19.5%;
+}
+.komunikaty h1{
+    margin-top:0;
+    padding-top: 10px;
+}
+
+#imghospital{
+    margin-top:10px;
+    margin-left:10px;
+    height: 30%;
+    float: left;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    background: #cce6ff;
+    border: 6px solid #e6f3ff;
+    box-sizing: border-box;
+    float: left;
+}
+
+nav .button {
+    background-color: #0069cc;
+    color: white;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    border-style:solid;
+    border-color:#66b3ff;
+    font-size: 16px;
+    width:100%;
+}
+
+nav .button:hover{
+    background-color: #e65c00;
+}
+
+main{
+    padding: 20px;
+    display: block;
+    width: 80%;
+    box-sizing: border-box;
+    background: #b7d7f4;
+    border: 6px solid white;
+    float: left;
+}
+.menu-info img{
+    display: block;
+    float:left;
+}
+form{
+    display: block;
+}
+
+main,
+nav{
+    min-height: 720px;
+}
+nav .button:hover:active{
+    background-color: #e65c00;
+}
+
+main h1 {
+    border-bottom: 1px solid #e6f3ff;
+    margin-bottom: 2rem;
+}
+
+body{
+    min-width: 360px;
+    width: 80%;
+    margin:auto;
+    padding: 0;
+    background-image: url('../images/tlo.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header{
+    text-align: center;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    height: 30%;
+    width:100%;
+    background: #cce6ff;
+    background: linear-gradient(to left, #cce6ff, #66b3ff);
+    margin:0;
+    padding: 0;
+    border: 5px solid #66b3ff;
+}
+
+footer {
+    text-align: center;
+    display: block;
+    clear: both;
+    background-color: #66b3ff;
+    color: white;
+    height: 10%;
+    padding: 1rem;
+}
+
+header div {
+    margin-right: 10px;
+    padding-right:0;
+    border-right: 0;
+    margin-bottom: 1rem;
+}
+
+header button{
+    width:150px;
+    height: 40px;
+    font-size:15px;
+    background-color:#ff8533;
+    color:white;
+    border-color:#e65c00;
+}
+
+header button:hover{
+    background-color: #f19756;
+}
+
+main h1,
+main h2{
+    text-align: center;
+}
+
+#imghospital{
+    margin-top:10px;
+    margin-left:10px;
+    height: 15%;
+    width: 15%;
+    float: left;
+    min-height: 117px;
+    min-width: 117px;
+}
+
+
+.error-text {
+    color: #c0392b;
+}
+
+@media all and (max-width: 900px) {
+    nav,
+    main {
+        min-height: 730px;
+        padding: 0.4rem;
+        border: none;
+    }
+
+    nav{
+        text-align: left;
+    }
+
+    nav .button {
+        text-align: left;
+        padding-left: 1rem;
+    }
+}
+
+
+@media all and (max-width: 720px){
+    header,
+    main {
+        border: none;
+    }
+
+    .pacjenciLista thead tr th:nth-child(1),
+    .pacjenciLista tr td:nth-child(1){
+        display: none;
+    }
+
+    header{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-bottom: 1rem;
+    }
+
+    header div,
+    header h1,
+    header img{
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    nav {
+        list-style: none;
+        text-align: center;
+        margin: auto;
+        width: 100%;
+        min-height: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    nav button{
+        height: 4rem;
+    }
+
+
+    main .menu-info{
+        padding: 0;
+    }
+
+
+    main table{
+        grid-template-columns: 300px;
+    }
+
+    main div{
+        width: 100%;
+    }
+
+    main .komunikaty,main .listapacjent,main .listapacjentow,main .edytujleczenie,main .listachoroby{
+        width: 100%;
+        margin: unset;
+        border:unset;
+    }
+
+    main .first{
+        margin: unset;
+        width: 100%;
+    }
+    main .second{
+        margin: unset;
+        width: 100%;
+    }
+
+    main{
+        width: 100%;
+    }
+
+    .button-wrapper{
+        margin-top: 2rem;
+    }
+
+}
+@media all and (max-width: 400px){
+    main {
+        padding: 0;
+    }
+
+    footer p{
+        padding: 0.2rem;
+        margin: 0;
+    }
+
+    .menu-info {
+        padding: 0;
+    }
+}

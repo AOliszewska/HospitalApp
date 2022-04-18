@@ -1,0 +1,93 @@
+main .table-horizontal,
+main .table-vertical{
+    text-align: center;
+    border-collapse: collapse;
+    margin: auto;
+    width: 80%;
+}
+
+.table-horizontal th,
+.table-horizontal td,
+.table-vertical th,
+.table-vertical td{
+    border: 2px solid white;
+}
+
+.table-vertical tr:nth-child(even){
+    background-color: #8fdcfc;
+}
+
+.table-horizontal td:nth-child(1){
+    background-color: rgba(17, 177, 218, 0.4);
+}
+
+.table-vertical th{
+    background-color: #6acbff;
+    padding: 0.6rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.table-horizontal td{
+    width: 50%;
+}
+
+
+
+@media all and (max-width: 900px) {
+
+    main .table-horizontal {
+        width: 100%;
+        margin: 0;
+    }
+
+    main .table-vertical {
+        width: 100%;
+        margin: 0;
+    }
+
+    .table-vertical th{
+        padding: 0;
+        font-size: 1rem;
+    }
+}
+
+@media all and (max-width: 720px) {
+
+    main .table-horizontal {
+        width: 100%;
+        margin: 0;
+
+    }
+
+    main .table-vertical{
+        overflow-wrap: anywhere;
+    }
+
+    .table-vertical th:nth-child(1),
+    .table-vertical td:nth-child(1){
+        display: none;
+    }
+    .table-vertical th,
+    .table-vertical td {
+        font-size: 0.7rem;
+    }
+
+}
+
+@media all and (max-width: 400px) {
+
+    .table-vertical th,
+    .table-vertical td{
+        font-size: 0.6rem;
+        font-weight: normal;
+        text-align: center;
+    }
+    .table-horizontal th,
+    .table-horizontal td{
+        font-size: 0.6rem;
+        font-weight: normal;
+        text-align: center;
+
+    }
+}

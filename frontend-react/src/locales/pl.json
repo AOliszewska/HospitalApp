@@ -1,0 +1,329 @@
+{
+	"main-page": {
+		"content": "Strona główna",
+		"title": "Przychodnia Medyczna",
+		"city" : "Warszawa",
+		"logout": "Wyloguj się",
+		"login": "Zaloguj się",
+		"loggedas": "Jesteś zalogowany jako",
+		"statement":"Komunikaty"
+
+	},
+	"login": {
+		"login": "Logowanie",
+		"email": "Email",
+		"password": "Hasło",
+		"loggedin": "Zaloguj się",
+		"placeholderlogin": "Wprowadź login",
+		"placeholderpassword": "Wprowadź hasło"
+	},
+	"nav": {
+		"profile": "Profil",
+		"patients": "Pacjenci",
+		"patientdisease": "Pacjenci Leczenie",
+		"disease": "Choroby",
+		"medicine": "Lekarstwa"
+
+	},
+	"list": {
+		"actions": {
+			"loading": "Ladowanie danych...",
+			"title": "Akcja",
+			"details": "Szczegóły",
+			"edit": "Zmodyfikuj",
+			"delete": "Usuń"
+		}
+	},
+	"form": {
+		"actions": {
+			"add": "Dodaj",
+			"return": "Powrót",
+			"edit": "Edytuj",
+			"cancel": "Anuluj"
+		}
+	},
+	"user": {
+		"fields": {
+			"user": "Uzytkownik",
+			"data": "Dane",
+			"firstName": "Imię",
+			"lastName": "Nazwisko",
+			"email": "Email",
+			"birthdate": "Data Urodzenia",
+			"address": "Adres Zamieszkania",
+			"telephone": "Telefon",
+			"pesel": "Pesel",
+			"password": "Hasło"
+		},
+		"list": {
+			"title": "Lista wszystkich pacjentów",
+			"addNew": "Dodaj nowego pacjenta",
+			"noData": "Brak pacjentów w bazie",
+			"pageTitle": "Lista pacjentów",
+			"deleteError": "Błąd przy usuwaniu pacjenta",
+			"deleteSuccess" : "Pomyślnie usunięto pacjenta"
+		},
+		"form": {
+			"patientdisease": "Historia leczenia",
+			"add": {
+				"pageTitle": "Dodawanie pacjenta",
+				"btnLabel": "Dodaj pacjenta",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie dodano pacjenta"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja pacjenta",
+				"btnLabel": "Zapisz zmiany",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie zaktualizowano pacjenta"
+				}
+			}
+		},
+		"details": {
+			"patientdetails": "Pacjent Szczegóły",
+			"patientdisease": "Historia leczenia",
+			"nameDisease": "Nazwa Choroby",
+			"description": "Opis Objawow",
+			"date": "Data wystawienia",
+			"exemption": "Zwolnienie do",
+			"price": "Cena Wizyty",
+			"details": {
+				"pageTitle": "Details",
+				"btnLabel": "Details"
+			}
+		},
+		"profile": {
+			"profile": "Szczegóły profilu"
+		}
+	},
+	"disease": {
+		"fields": {
+			"disease":"Choroba",
+			"data": "Dane",
+			"name" : "Nazwa choroby",
+			"descriptionDisease": "Opis choroby",
+			"infectiousDisease" :"Zakaźna"
+		},
+		"list": {
+			"title": "Lista wszystkich chorób",
+			"addNew": "Dodaj nową chorobę",
+			"noData": "Brak chorób w bazie",
+			"pageTitle": "Lista chorób",
+			"deleteError": "Błąd przy usuwaniu choroby",
+			"deleteSuccess": "Poprawnie usunięto chorobę"
+		},
+		"form": {
+			"add": {
+				"pageTitle": "Dodawanie choroby",
+				"btnLabel": "Dodaj chorobę",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie dodano chorobę"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja choroby",
+				"btnLabel": "Zapisz zmiany",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie zaktualizowano chorobę"
+				}
+			}
+		},
+		"details": {
+			"patientdetails": "Pacjent Szczegóły",
+			"patientdisease": "Pacjenci z chorobą",
+			"nameDisease": "Nazwa Choroby",
+			"description": "Opis Objawów",
+			"date": "Data wystawienia",
+			"exemption": "Zwolnienie do",
+			"price": "Cena Wizyty",
+			"details": {
+				"pageTitle": "Details",
+				"btnLabel": "Details"
+			},
+			"chooseoption" : "--wybierz opcje--",
+			"yes": "tak",
+			"no": "nie"
+		}
+	},
+	"patientdisease": {
+		"details": {
+			"medicalResults": "Wyniki badań",
+			"title": "Szczegóły leczenia"
+		},
+
+		"list": {
+			"title": "Lista pacjentów",
+			"addNew": "Dodaj nowe leczenie",
+			"noData": "Brak rekordów w bazie",
+			"pageTitle": "Lista leczenia",
+			"deleteError": "Błąd przy usuwaniu leczenia",
+			"deleteSuccess": "Poprawnie usunięto leczenie"
+		},
+		"form": {
+			"details": {
+				"information":"Informacje o pacjencie",
+				"choose": "Choose option",
+				"choose1": "Wybór choroby",
+				"option": "--Wybierz opcje--",
+				"option1":"--Wybierz chorobę--"
+			},
+			"add": {
+				"pageTitle": "Dodawanie nowego leczenia",
+				"btnLabel": "Dodaj nowe leczenie",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie dodano leczenie"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja leczenia",
+				"btnLabel": "Edytuj leczenie",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie zmodyfikowano leczenie"
+				}
+			}
+		}
+	},
+	"medicine": {
+		"fields":{
+			"medicine": "Lekarstwa",
+			"name": "Nazwa lekarstwa",
+			"price": "Cena",
+			"description": "Opis lekarstwa"
+		},
+		"list": {
+			"title": "Lista lekarstw",
+			"addNew": "Dodaj nowe lekarstwo",
+			"noData": "Brak rekordów w bazie",
+			"deleteError": "Błąd w usuwaniu leku",
+			"deleteSuccess": "Usunięto pomyślnie lek"
+		},
+		"form": {
+			"details": {
+				"information":"Informacje o lekarstwie"
+			},
+			"add": {
+				"pageTitle": "Dodawanie nowego lekarstwo",
+				"btnLabel": "Dodaj nowe lekarstwo",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie dodano lekarstwo"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja lekarstwa",
+				"btnLabel": "Edytuj lekarstwo",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie zmodyfikowano lekarstwo"
+				}
+			}
+		}
+	},
+	"validationMessage" : {
+		"error": "Błąd",
+		"required": "Pole wymagane",
+		"size": "Pole powinno zawierać od ",
+		"to": "do ",
+		"characters": "znaków",
+		"number": "Pole powinno być liczbą",
+		"numberSize": "Pole powinno być liczbą z zakresu od ",
+		"and": "do ",
+		"date": "Pole powinno zawierać datę w formacie rrrr-MM-dd (np. 2000-01-01)",
+		"future": "Data nie moze byc z przyszłości",
+		"past": "Data nie moze byc z przeszłości",
+		"later": "Zwolnienie Do powinna być późniejsza niż data Wystawienia",
+		"form" : "Formularz zawiera błędy",
+		"email": "Pole powinno zawierać prawidłowy email",
+		"wrong": "Nieprawidlowy adres email lub hasło",
+		"len_2":"Pole powinno zawierać od 2",
+		"notEmpty": "Pole jest wymagane",
+		"len_2_20": "Pole powinno zawierać od 2 do 20 znaków",
+		"len_2_40": "Pole powinno zawierać od 2 do 40 znaków",
+		"len_2_25": "Pole powinno zawierać od 2 do 25 znaków",
+		"len_2_100": "Pole powinno zawierać od 2 do 100 znaków",
+		"len_2_30": "Pole powinno zawierać od 2 do 30 znaków",
+		"num_0_9999": "Pole powinno być liczbą z zakresu od 0 do 9999",
+		"isEmail" : "Pole powinno zawierać prawidłowy adres email",
+		"formErrors": "Formularz zawiera błędy",
+		"emailExists" : "Ten email znajduje się już w bazie",
+		"Login": "Nieprawidłowy email lub hasło"
+
+	},
+	"prescription": {
+		"fields":{
+			"medicine": "Lekarstwo",
+			"dosage": "Dawkowanie",
+			"expirationDate": "Termin ważności"
+		},
+		"list": {
+			"title": "Recepta",
+			"viewTheRecipe": "Wyświetl recepte",
+			"addNew": "Dodaj nowe lekarstwo",
+			"noData": "Brak recept do wyświetlenia",
+			"deleteError": "Błąd w usuwaniu leku",
+			"deleteSuccess": "Usunięto pomyślnie lek"
+		},
+		"form": {
+			"details": {
+				"information":"Informacje o lekarstwie"
+			},
+			"add": {
+				"pageTitle": "Dodawanie nowego lekarstwo",
+				"btnLabel": "Dodaj nowe lekarstwo",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie dodano lekarstwo"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja lekarstwa",
+				"btnLabel": "Edytuj lekarstwo",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie zmodyfikowano lekarstwo"
+				}
+			}
+		}
+	},
+	"opinion":{
+		"fields": {
+
+		},
+		"list": {
+			"title": "Lista dostępnych lekarzy",
+			"h2": "Profil doktora",
+			"opinions": "Opinie",
+			"opinion": "Opinia",
+			"addNew": "Dodaj nową opinie",
+			"noData": "Brak opinii w bazie",
+			"deleteError": "Błąd w usunięciu opinii",
+			"deleteSuccess": "Opinie usunięto pomyślnie",
+			"form": "Wystaw opinie lekarzowi",
+			"formEdit": "Zmodyfikuj swoją opinię"
+		},
+		"form": {
+			"details": {
+				"information":"Informacje o lekarstwie"
+			},
+			"add": {
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie dodano opinie"
+				}
+			},
+			"edit": {
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie zmodyfikowano opinie"
+				}
+			}
+		}
+	}
+}

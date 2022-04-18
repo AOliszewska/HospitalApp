@@ -1,0 +1,39 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+        <h2 > Rejestracja nowego pacjenta </h2>
+        <form >
+                     <label for="Imie"> Imię: <span class="symbol-required">*</span> </label>
+                       <input type="text" name="Imie" id="Imie" class="error-input" required>
+                        <span id="errorImie" class="error-text">Za mało znaków</span>
+
+                     <label for="Nazwisko"> Nazwisko: <span class="symbol-required">*</span> </label>
+                      <input type="text" name="Nazwisko" id="Nazwisko" class="error-input"  required>
+                       <span id="errorNazwisko" class="error-text">Za dużo znaków</span>
+
+                      <label for="Email"> Email: <span class="symbol-required">*</span> </label>
+                      <input type="text" name="Email" id="Email" class="error-input" required>
+                       <span id="errorEmail" class="error-text">Nieprawidłowy email</span>
+
+                     <label for="AdresZamieszkania"> Adres Zamieszkania: <span class="symbol-required">*</span> </label>
+                       <input type="text" name="AdresZamieszkania" id="AdresZamieszkania" class="error-input" required>
+                        <span id="errorAdresZamieszkania" class="error-text">Adres niepoprawny</span>
+
+                     <label for="Telefon"> Telefon: </label>
+                        <input type="text" name="Telefon" id="Telefon" class="error-input" >
+                        <span id="errorTelefon" class="error-text">Błędny numer telefonu</span>
+
+                     <label for="Pesel"> Pesel:  </label>
+                      <input type="text" name="Pesel" id="Pesel" class="error-input" required>
+                       <span id="errorPesel" class="error-text">Tylko cyfry</span>
+
+                     <label for="dataUrodzenia"> Data Urodzenia: <span class="symbol-required">*</span> </label>
+                      <input type="date" name="dataUrodzenia" id="dataUrodzenia" class="error-input" required>
+                       <span id="errordataUrodzenia" class="error-text">Błędna data</span>
+
+            <div class="button-wrapper">
+                <input type="submit" value="Dodaj" id="submit" style="color:black"/>
+                <a href="/Pacjenci" >Powrót</a>
+            </div>
+        </form>
+</main>
+<%- include('../../fragments/footer.ejs') %>

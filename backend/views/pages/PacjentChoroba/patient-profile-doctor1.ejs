@@ -1,0 +1,55 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <script type="application/javascript" src="/JS/validationForm.js"></script>
+    <h2 > <%=pageTitle%>  </h2>
+    <form class="form" method="post" novalidate onsubmit="return validationForm();" action="<%=formAction%>">
+        <label for="pacjent"> Wybierz Pacjenta: <span class="symbol-required">*</span> </label>
+        <select  name="_idUzytkownik" id="_idUzytkownik" >
+            <option value="null" > --Wybierz pacjenta-- </option>
+            <%for (let i=0; i< allPatient.length; i++) { let option= allPatient[i]; %>
+            <option value="<%=option._idUzytkownik%>" label="<%= option._idUzytkownik + '. '+ option.imie + ' '+ option.nazwisko%>"
+                <%= (users._idUzytkownikChoroba && option._idUzytkownik === users.uzytkownik._idUzytkownik) ? 'selected' : ' '%>>
+            </option>
+            <% } %>
+        </select>
+        <span id="errorpacjent" class="error-text"></span>
+
+        <label for="_idChoroba"> Wybór choroby : <span class="symbol-required">*</span> </label>
+        <select name="_idChoroba" id="_idChoroba">
+            <option value="null"> -- Wybierz z listy chorobę -- </option>
+            <%for (let i=0; i< allDiseases.length; i++) { let option= allDiseases[i]; %>
+            <option value="<%=option._idChoroba%>" label="<%= option._idChoroba + '. '+ option.nazwa%>"
+                    <%= option._idChoroba === users.choroba._idChoroba ? 'selected' : ''%>>
+            </option>
+            <% } %>
+        </select>
+        <span id="errorchoroba" class="error-text"></span>
+
+
+        <label for="opisObjawow"> Opis Objawów: <span class="symbol-required">*</span> </label>
+        <textarea id="opisObjawow" name="opisObjawow" rows="4" cols="22" required> <%=users.opisObjawow%></textarea>
+        <span id="errorobjawy" class="error-text"></span>
+
+        <label for="dataWystawienia"> Data Wystawienia: <span class="symbol-required">*</span> </label>
+        <input type="date" name="dataWystawienia" id="dataWystawienia" value="<%= users.dataWystawienia ? users.dataWystawienia.toISOString().split('T')[0]: ' '%>">
+        <span id="errordatawystawienia" class="error-text"></span>
+
+        <label for="zwolnienieDo"> Zwolnienie do: </label>
+        <input type="date" name="zwolnienieDo" id="zwolnienieDo" value="<%= users.zwolnienieDo ? users.zwolnienieDo.toISOString().split('T')[0] : ' '%>">
+        <span id="errorzwolnieniedo" class="error-text"></span>
+
+        <label for="cenaWizyty"> Cena Wizyty: <span class="symbol-required">*</span> </label>
+        <input type="text" name="cenaWizyty" id="cenaWizyty" value=<%=users.cenaWizyty%> >
+        <span id="errorcenawizyty" class="error-text"></span>
+
+        <div class="button-wrapper">
+            <%if (formMode=='edit') {%>
+            <p id="errorSummary"> </p>
+            <input type="submit" value="<%=btnLabel%>" id="submit" style="color:black"/>
+            <a href="/PacjentChoroba" >Anuluj</a>
+            <%}%>
+        </div>
+    </form>
+
+</main>
+<%- include('../../fragments/footer.ejs') %>

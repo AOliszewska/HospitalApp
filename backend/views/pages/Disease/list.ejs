@@ -1,0 +1,44 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2><%= __('disease.list.title') %></h2>
+    <table class="table-vertical">
+        <% if (diseases.length ===0) { %>
+            <p class="error-text"> <%= __('disease.list.noData') %> </p>
+        <% }%>
+        <% let x=1 %>
+        <% for (let disease of diseases) { %>
+        <thead >
+        <tr>
+            <th>  <%= __('disease.fields.data') %> </th>
+            <th>  <%= __('disease.fields.name') %> </th>
+            <th>  <%= __('disease.fields.descriptionDisease') %> </th>
+            <% if(loggedUser && loggedUser.rola===3) {%>
+            <th>  <%= __('list.actions.title') %> </th>
+            <%}%>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td> <%=x%> </td>
+            <td><%= disease.nazwa%></td>
+            <td><%= disease.zakazna === 1 ? "tak" : "nie"%> </td>
+            <% if(loggedUser && loggedUser.rola===3) {%>
+            <td>
+                <button onclick="location.href='/Disease/modify/<%=disease._idChoroba %>'" > <%= __('list.actions.edit') %></button>
+                <button onclick="location.href='/Disease/details/<%=disease._idChoroba %>'"> <%= __('list.actions.details') %></button>
+                <button onclick="location.href='/Disease/delete/<%=disease._idChoroba %>'"><%= __('list.actions.delete') %></button>
+            </td>
+            <%}%>
+        </tr>
+        <%x++%>
+        <%}%>
+        </tbody>
+    </table>
+    <br>
+    <% if(loggedUser && loggedUser.rola===3) {%>
+    <div class="button-wrapper">
+        <button onclick="location.href='/Disease/add'" ><%= __('disease.list.addNew') %></button>
+    </div>
+    <%}%>
+</main>
+<%- include('../../fragments/footer.ejs') %>

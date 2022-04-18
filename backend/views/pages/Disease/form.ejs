@@ -1,0 +1,64 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <div style="display: none">
+        <span id="errorMessage-required"><%= __('validationMessage.required') %></span>
+        <span id="errorMessage-size"><%= __('validationMessage.size') %></span>
+        <span id="errorMessage-to"><%= __('validationMessage.to') %></span>
+        <span id="errorMessage-characters"><%= __('validationMessage.characters') %></span>
+        <span id="errorMessage-number"><%= __('validationMessage.number') %></span>
+        <span id="errorMessage-numberSize"><%= __('validationMessage.numberSize') %></span>
+        <span id="errorMessage-and"><%= __('validationMessage.and') %></span>
+        <span id="errorMessage-date"><%= __('validationMessage.date') %></span>
+        <span id="errorMessage-future"><%= __('validationMessage.future') %></span>
+        <span id="errorMessage-later"><%= __('validationMessage.later') %></span>
+        <span id="errorMessage-form"><%= __('validationMessage.form') %></span>
+    </div>
+    <script type="application/javascript" src="/JS/validationFormChoroby.js"> </script>
+    <h2 > <%=pageTitle%>  </h2>
+<!--    onsubmit="return validationForm();"-->
+    <form class="form" method="post" novalidate action="<%=formAction%>" onsubmit="return validationForm();"  >
+        <input type="hidden" name="_idChoroba" value="<%=diseases._idChoroba%>" >
+
+        <label for="nazwa"> <%= __('disease.fields.name') %> <span class="symbol-required">*</span> </label>
+        <input type="text" name="nazwa" id="nazwa" value="<%=diseases.nazwa%>"
+        class="<%=validationErrors.find(e => e.path.includes('nazwa')) ? 'error-input' : ''%>" required>
+        <span id="errorNazwa" class="error-text">
+            <%if (validationErrors.find(e => e.path.includes('nazwa'))) {%>
+            <%= validationErrors.find(e => e.path.includes('nazwa')).message %>
+            <% } %>
+        </span>
+
+        <label for="opis"> <%= __('disease.fields.descriptionDisease') %> <span class="symbol-required">*</span> </label>
+        <textarea id="opis" name="opis" rows="4" cols="22" required  class="<%= validationErrors.find(e=> e.path.includes('opis')) ? 'error-input' : ''%>" ><%=diseases.opis%></textarea>
+        <span id="errorOpis" class="error-text">
+            <% if (validationErrors.find(e => e.path.includes('opis'))) {%>
+                <%= validationErrors.find(e => e.path.includes('opis')).message %>
+            <% } %>
+        </span>
+
+        <label for="zakazna"> <%= __('disease.fields.infectiousDisease') %> <span class="symbol-required"> *</span></label>
+        <select name="zakazna" id="zakazna" class="<%= validationErrors.find(e=> e.path.includes('zakazna')) ? 'error-input' : ''%>">
+            <option value="null" selected> <%= __('disease.details.chooseoption') %>  </option>
+            <%for (let i=0; i< allOptions.length; i++) { let option= allOptions[i]; %>
+            <option value="<%=option%>" label="<%=option ===true? "tak" : "nie"%>"
+                <%= option.toString()==diseases.zakazna ? 'selected' : ''%>
+                <%= (option.toString()=='true' ? 1 : 0)==diseases.zakazna ? 'selected' : ''%>
+            ></option>
+            <% } %>
+        </select>
+        <span id="errorZakazna" class="error-text">
+            <% if (validationErrors.find(e => e.path.includes('zakazna'))) {%>
+                <%= validationErrors.find(e => e.path.includes('zakazna')).message %>
+            <% } %>
+        </span>
+
+        <div class="button-wrapper">
+            <p id="errorSummary" style="color: #c0392b">
+                <%= validationErrors.length > 0 ?  __('validationMessage.form')   : '' %>
+            </p>
+            <input type="submit" value="<%=btnLabel%>" id="submit" style="color:black"/>
+            <a href="/Choroby" ><%= __('form.actions.cancel') %></a>
+        </div>
+    </form>
+</main>
+<%- include('../../fragments/footer.ejs') %>

@@ -1,0 +1,200 @@
+{
+	"main-page": {
+		"content": "Main-page",
+		"title": "Medical clinic",
+		"city": "Warsaw",
+		"logout": "Logout",
+		"login": "Login",
+		"loggedas": "You are logged as",
+		"statement": "Information",
+		"email": "main-page.email",
+		"password": "main-page.password",
+		"loggedin": "main-page.loggedin"
+	},
+	"login": {
+		"login": "Log in",
+		"email": "Email",
+		"password": "Password",
+		"loggedin": "Sign in",
+		"placeholderlogin": "Insert login",
+		"placeholderpassword": "Insert password"
+	},
+	"nav": {
+		"profile": "Profile",
+		"patients": "Patients",
+		"patientdisease": "Patient Treatment",
+		"disease": "Disease"
+	},
+	"list": {
+		"actions": {
+			"title": "Actions",
+			"details": "Details",
+			"edit": "Edit",
+			"delete": "Delete"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Return",
+			"edit": "Edit",
+			"cancel": "Cancel"
+		}
+	},
+	"user": {
+		"fields": {
+			"data": "Data",
+			"firstName": "First name",
+			"lastName": "Last name",
+			"email": "Email",
+			"birthdate": "Date of birth",
+			"address": "Address",
+			"telephone": "Telephone",
+			"pesel": "Pesel",
+			"password": "Password"
+		},
+		"list": {
+			"title": "List of patients",
+			"addNew": "Add new patient",
+			"noData": "No patients in database",
+			"pageTitle": "List of patients"
+		},
+		"form": {
+			"patientdisease": "History of treatment",
+			"add": {
+				"pageTitle": "Adding a new patient",
+				"btnLabel": "Add the patient",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The new patient has been successfully created"
+				}
+			},
+			"edit": {
+				"pageTitle": "Editing an patient",
+				"btnLabel": "Save changes",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The patient has been successfully updated"
+				}
+			}
+		},
+		"details": {
+			"patientdetails": "Patient details",
+			"patientdisease": "History of disease",
+			"nameDisease": "The name of the disease",
+			"description": "Description",
+			"date": "Date of issue",
+			"exemption": "Exemption to",
+			"price": "Visit price",
+			"details": {
+				"pageTitle": "Details",
+				"btnLabel": "Details"
+			}
+		},
+		"profile": {
+			"profile": "Profile details"
+		}
+	},
+	"disease": {
+		"fields": {
+			"data": "Data",
+			"name": "Disease name",
+			"descriptionDisease": "Description disease",
+			"infectiousDisease": "Infectious disease"
+		},
+		"list": {
+			"title": "List of diseases",
+			"addNew": "Add new disease",
+			"noData": "No diseases in database",
+			"pageTitle": "List of disease"
+		},
+		"form": {
+			"add": {
+				"pageTitle": "Adding a new disease",
+				"btnLabel": "Add the disease",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The new disease has been successfully created"
+				}
+			},
+			"edit": {
+				"pageTitle": "Editing an disease",
+				"btnLabel": "Save changes",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The disease has been successfully updated"
+				}
+			}
+		},
+		"details": {
+			"patientdetails": "Disease details",
+			"patientdisease": "Patient's diseases",
+			"nameDisease": "The name of the disease",
+			"description": "Description of symptoms",
+			"date": "Date of issue",
+			"exemption": "Exemption to",
+			"price": "Visit price",
+			"details": {
+				"pageTitle": "Details",
+				"btnLabel": "Details"
+			},
+			"chooseoption": "--choose option--",
+			"yes": "tak",
+			"no": "nie"
+		}
+	},
+	"patientdisease": {
+		"details": {
+			"medicalResults": "Medical results"
+		},
+		"list": {
+			"title": "List of patients",
+			"addNew": "Add new treatment",
+			"noData": "No treatment in database",
+			"pageTitle": "List of treatment"
+		},
+		"form": {
+			"details": {
+				"information": "Patient information",
+				"choose": "Choose patient",
+				"choose1": "Choose disease",
+				"option": "--choose patient--",
+				"option1": "--choose disease--"
+			},
+			"add": {
+				"pageTitle": "Adding a new treatment",
+				"btnLabel": "Add the treatment",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The new treatment has been successfully created"
+				}
+			},
+			"edit": {
+				"pageTitle": "Editing an treatment",
+				"btnLabel": "Edit treatment",
+				"confirm": {
+					"header": "Confirmation",
+					"text": "The treatment has been successfully updated"
+				}
+			},
+			"btnLabel": "patientdisease.form.btnLabel"
+		},
+		"edit": {
+			"btnLabel": "patientdisease.edit.btnLabel"
+		}
+	},
+	"validationMessage": {
+		"required": "Field is required",
+		"size": "The field should contain from ",
+		"to": " to ",
+		"characters": " characters",
+		"number": "The field should be a number",
+		"numberSize": "The field should be a number between",
+		"and": "and ",
+		"date": "The field should contain the date in the yyyy-MM-dd format (e.g. 2000-01-01)",
+		"future": "The date cannot be from the future",
+		"later": "Date of issue should be later than exemption",
+		"form": "The form contains errors",
+		"email": "The field should contain a valid email",
+		"wrong": "Incorrect password or email"
+	}
+}

@@ -1,0 +1,25 @@
+.logowanie{
+    margin:auto;
+    text-align: center;
+    background-color: #b7d7f4;
+    width: 100%;
+    height: 800px;
+
+}
+main {
+    min-height: 400px;
+    width: 100%;
+}
+
+.logowanie h2{
+    margin-top: 0;
+    padding-top: 20px;
+}
+
+.logowaniediv{
+    margin:auto;
+    width:80%;
+    padding-top:20px;
+    padding-bottom:20px;
+
+}

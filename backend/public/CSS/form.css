@@ -1,0 +1,73 @@
+main form{
+    display: grid;
+    grid-template-columns: 180px 250px;
+    row-gap:1rem;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+form span{
+      text-align: right;
+    grid-column: span 2;
+}
+
+.button-wrapper{
+    grid-column: span 2;
+}
+.button-wrapper p{
+    color:red;
+}
+
+form input.error-input,
+form select.error-input,
+form textarea.error-input{
+    border: 1px solid #e74c3c;
+}
+
+form label{
+    text-align: right;
+    padding-right: 1rem;
+}
+
+form input,
+form select{
+    height: 30px;
+}
+
+form input[type=date], form textarea{
+    font-family: Arial, serif;
+    font-size:0.8rem;
+}
+
+.symbol-required{
+    color: red;
+}
+
+@media all and (max-width: 720px){
+
+    main form{
+        grid-template-columns: 300px;
+        row-gap: 0.7rem;
+    }
+
+
+
+    form span{
+        grid-column: span 1;
+        text-align: center;
+    }
+
+    .button-wrapper{
+        grid-column: span 1;
+    }
+
+    form label{
+        text-align: left;
+        padding-right: 1rem;
+    }
+
+
+
+}
+

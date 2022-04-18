@@ -1,0 +1,43 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2> Rejestracja nowego leczenia  </h2>
+    <form class="form">
+      <label for="Pacjent"> Wybierz Pacjenta: <span class="symbol-required">*</span></label>
+          <select  name="Pacjent" id="Pacjent" class="error-input">
+            <option value="null"> --Wybierz pacjenta-- </option>
+            <option value="1"> Aleksandra Oliszewska pesel 214015015 </option>
+            <option value="2"> Wiesława Kwiatek  pesel 21441515 </option>
+            <option value="3"> Zygmunt Bakłażan pesel 114015015 </option> </select>
+           <span id="errorPacjent" class="error-text">Nie wybrano pacjenta</span>
+
+          <label for="choroba"> Wybór Choroby: <span class="symbol-required">*</span> </label>
+          <select  name="choroba" id="choroba" class="error-input">
+            <option> --Wybierz chorobę-- </option>
+            <option value="1"> Grypa </option>
+            <option value="2"> Ospa </option>
+            <option value="3"> Covid </option> </select>
+            <span id="errorChoroba" class="error-text">Nie wybrano choroby</span>
+
+        <label for="objawy"> Opis Objawów: <span class="symbol-required">*</span> </label>
+        <textarea id="objawy" name="objawy" rows="4" cols="22" class="error-input" required></textarea>
+        <span id="errorobjawy" class="error-text">Mało znaków</span>
+
+       <label for="datawystawienia"> Data Wystawienia: <span class="symbol-required">*</span> </label>
+      <input type="date" name="datawystawienia" id="datawystawienia"  class="error-input" required>
+      <span id="errorEmail" class="error-text">Błędna data</span>
+
+      <label for="zwolnieniedo"> Data Wystawienia: <span class="symbol-required">*</span> </label>
+      <input type="date" name="zwolnieniedo" id="zwolnieniedo"  class="error-input" required>
+      <span id="errorzwolnieniedo" class="error-text">Błędna data</span>
+
+        <label for="cenawizyty"> Cena Wizyty: <span class="symbol-required">*</span> </label>
+      <input type="text" name="cenawizyty" id="cenawizyty"  class="error-input" required>
+      <span id="errorcenawizyty" class="error-text">Cena mniejsz od zera</span>
+
+      <div class="button-wrapper">
+        <input type="submit" value="Dodaj" id="submit"/>
+        <a href="/PacjentChoroba"> Powrót </a>
+      </div>
+    </form>
+</main>
+<%- include('../../fragments/footer.ejs') %>

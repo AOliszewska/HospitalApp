@@ -1,0 +1,41 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2><%=__('patientdisease.list.title')%> </h2>
+    <% if (usersdisease.length ===0) { %>
+        <p class="error-text"> <%= __('patientdisease.list.noData') %> </p>
+    <% }else {%>
+    <table class="table-vertical" >
+        <thead >
+        <tr id="listapacjentowwszystkich">
+            <th> <%=__('user.fields.data')%></th>
+            <th> <%=__('user.fields.firstName')%> </th>
+            <th> <%=__('user.fields.lastName')%> </th>
+            <th> <%=__('disease.fields.name')%></th>
+            <th> <%=__('list.actions.title')%>  </th>
+        </tr>
+        </thead>
+        <tbody >
+        <% let x=1 %>
+        <% for (let user of usersdisease ) { %>
+        <tr>
+            <td> <%=x%> </td>
+            <td><%=user.uzytkownik.imie%></td>
+            <td><%=user.uzytkownik.nazwisko%></td>
+            <td><%=user.choroba.nazwa%></td>
+            <td>
+                <button onclick="location.href='/PacjentChoroba/modify/<%=user._idUzytkownikChoroba%>'" ><%=__('list.actions.edit')%> </button>
+                <button onclick="location.href='/PacjentChoroba/details/<%=user._idUzytkownikChoroba%>'" ><%=__('list.actions.details')%> </button>
+                <button onclick="location.href='/PacjentChoroba/delete/<%=user._idUzytkownikChoroba%>'"><%=__('list.actions.delete')%> </button>
+            </td>
+        </tr>
+        <%x++%>
+        <% } %>
+        </tbody>
+    </table>
+    <br>
+    <%}%>
+    <div class="button-wrapper">
+        <button style=" min-width:250px" onclick="location.href='/PacjentChoroba/add'"> <%=__('patientdisease.list.addNew')%>  </button>
+    </div>
+</main>
+<%- include('../../fragments/footer.ejs') %>

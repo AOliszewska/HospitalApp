@@ -1,0 +1,6 @@
+@media all and (max-width: 720px){
+    nav .button {
+        text-align: center;
+        width: 100%;
+    }
+}

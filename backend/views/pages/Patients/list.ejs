@@ -1,0 +1,38 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2> <%=pageTitle%> </h2>
+    <% if (users.length ===0) { %>
+        <p class="error-text"> <%= __('user.list.noData') %> </p>
+    <% }%>
+        <table class="table-vertical">
+            <% let x=1 %>
+            <% for (let user of users) { %>
+            <tr>
+                <th> <strong><%= __('user.fields.data') %> </strong></th>
+                <th> <strong><%=__('user.fields.firstName') %> </strong></th>
+                <th> <strong><%=__('user.fields.lastName') %> </strong></th>
+                <th> <strong><%=__('user.fields.birthdate') %> </strong></th>
+                <th> <strong> <%=__('user.fields.pesel') %> </strong></th>
+                <th> <strong> <%= __('list.actions.title') %></strong></th>
+            </tr>
+            <tr>
+                <td> <%=x%> </td>
+                <td><%= user.imie%></td>
+                <td><%= user.nazwisko%></td>
+                <td><%= user.dataUrodzenia %></td>
+                <td><%= user.pesel%></td>
+                <td>
+                    <button onclick="location.href='/Patients/modify/<%= user._idUzytkownik%>'" ><%= __('list.actions.edit') %></button>
+                    <button onclick="location.href='/Patients/details/<%= user._idUzytkownik%>'" ><%= __('list.actions.details') %></button>
+                    <button onclick="location.href='/Patients/delete/<%= user._idUzytkownik%>'"><%= __('list.actions.delete') %></button> <!-- delete do poprawy -->
+                </td>
+            </tr>
+                <%x++%>
+            <% }%>
+        </table>
+    <div class="button-wrapper">
+        <button  onclick="location.href='Patients/add'"> <%= __('user.list.addNew') %> </button>
+    </div>
+
+</main>
+<%- include('../../fragments/footer.ejs') %>

@@ -1,0 +1,64 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2 > <%= pageTitle %> </h2>
+        <table class="table-horizontal" >
+            <tbody>
+            <tr>
+                <td><%=__('user.fields.firstName')%> </td>
+                <td><%= users.imie%></td>
+            </tr>
+
+            <tr>
+                <td ><%=__('user.fields.lastName')%> </td>
+                <td><%= users.nazwisko%></td>
+            </tr>
+            <tr>
+                <td ><%=__('user.fields.birthdate')%> </td>
+                <td><%=users.dataUrodzenia %></td>
+            </tr>
+            <tr>
+                <td ><%=__('user.fields.email')%></td>
+                <td><%= users.email%></td>
+            </tr>
+            <tr>
+                <td ><%=__('user.fields.address')%></td>
+                <td><%= users.miejsceZamieszkania%></td>
+            </tr>
+            <tr>
+                <td><%=__('user.fields.telephone')%></td>
+                <td><%= users.telefon%></td>
+            </tr>
+            <tr>
+                <td ><%=__('user.fields.pesel')%></td>
+                <td><%= users.pesel%></td>
+            </tr>
+<!--            <tr>-->
+<!--                <td>Rola</td>-->
+<!--                <td>Admin</td>-->
+<!--            </tr>-->
+            </tbody>
+        </table>
+    <h2> <%=__('user.form.patientdisease')%> </h2>
+    <table class="table-vertical">
+            <tr>
+                <th> <strong>  <%=__('user.details.nameDisease')%> </strong></th>
+                <th> <strong> <%=__('user.details.description')%>  </strong></th>
+                <th> <strong> <%=__('user.details.date')%> </strong></th>
+                <th> <strong> <%=__('user.details.exemption')%>  </strong></th>
+                <th> <strong> <%=__('user.details.price')%> </strong></th>
+            </tr>
+        <%for (let p of users.uzytkownikchoroby ) {%>
+            <tr>
+                <td> <%= p.choroba.nazwa %> </td>
+                <td> <%= p.opisObjawow %> </td>
+                <td> <%= new Date(p.dataWystawienia.getTime() - (p.dataWystawienia .getTimezoneOffset() * 60000 )).toISOString().split("T")[0]%></td>
+                <td> <%= p.zwolnienieDo ? new Date(p.zwolnienieDo.getTime() - (p.zwolnienieDo .getTimezoneOffset() * 60000 )).toISOString().split("T")[0]: '' %></td>
+                <td> <%= p.cenaWizyty %></td>
+            </tr>
+        <%}%>
+    </table>
+        <div class="button-wrapper">
+            <button onclick="location.href='/Patients'" > <%=__('form.actions.return')%>  </button>
+        </div>
+</main>
+<%- include('../../fragments/footer.ejs') %>

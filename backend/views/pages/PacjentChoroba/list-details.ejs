@@ -1,0 +1,77 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2 > <%= pageTitle%> </h2>
+    <table class="table-horizontal">
+        <tr >
+            <td><%=__('user.fields.firstName')%></td>
+            <td><%= users.uzytkownik.imie%></td>
+        </tr>
+        <tr >
+            <td><%=__('user.fields.lastName')%></td>
+            <td><%= users.uzytkownik.nazwisko%></td>
+        </tr>
+        <tr >
+            <td><%=__('user.fields.birthdate')%></td>
+            <td><%= new Date(users.uzytkownik.dataUrodzenia.getTime() - (users.uzytkownik.dataUrodzenia.getTimezoneOffset() * 60000 )).toISOString().split("T")[0]%></td>
+        </tr>
+        <tr >
+            <td><%=__('user.fields.email')%></td>
+            <td><%= users.uzytkownik.email%></td>
+        </tr>
+
+        <tr >
+            <td><%=__('user.fields.address')%></td>
+            <td><%= users.uzytkownik.miejsceZamieszkania%></td>
+        </tr>
+        <tr>
+            <td><%=__('user.fields.telephone')%></td>
+            <td><%= users.uzytkownik.telefon%></td>
+        </tr>
+        <tr>
+            <td ><%=__('user.fields.pesel')%></td>
+            <td><%= users.uzytkownik.pesel%></td>
+        </tr>
+    </table>
+    <hr>
+    <h2> <%=__('patientdisease.details.medicalResults')%> </h2>
+    <table class="table-horizontal">
+        <tr >
+            <td><%=__('disease.fields.name')%></td>
+            <td> <%= users.choroba.nazwa %> </td>
+        </tr>
+        <tr >
+            <td><%=__('disease.details.description')%> </td>
+            <td><%= users.opisObjawow %> </td>
+        </tr>
+        <tr >
+            <td><%=__('disease.fields.infectiousDisease')%> </td>
+            <td><%= users.choroba.zakazna ===1 ? "tak" : "nie"%></td>
+        </tr>
+        <tr >
+            <td> <%=__('disease.fields.descriptionDisease')%></td>
+            <td><%= users.choroba.opis%></td>
+        </tr>
+        <tr >
+            <td><%=__('disease.details.date')%> </td>
+            <td><%= users.dataWystawienia%></td>
+            </td>
+        </tr>
+        <tr >
+            <td><%=__('disease.details.exemption')%> </td>
+            <td><%= users.zwolnienieDo ? users.zwolnienieDo : ''%></td>
+            </td>
+        </tr>
+        <tr >
+            <td><%=__('disease.details.price')%> </td>
+            <td><%= users.cenaWizyty %></td>
+        </tr>
+
+    </table>
+    <div class="button-wrapper">
+        <button onclick="location.href='/PacjentChoroba/details/modify/<%=users._idUzytkownikChoroba%>'" ><%=__('patientdisease.form.edit.btnLabel')%> </button>
+<!--        <button onclick="location.href='/PacjentChoroba/details/modifyPatient/<%=users._idUzytkownikChoroba %>'" >Edytuj Profil</button>-->
+        <button onclick="location.href='/PacjentChoroba'" ><%=__('form.actions.return')%> </button>
+    </div>
+
+</main>
+<%- include('../../fragments/footer.ejs') %>

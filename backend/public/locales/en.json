@@ -1,0 +1,80 @@
+{
+  "main-page": {
+    "content": "Main-page"
+  },
+  "nav": {
+    "profile": "Profile",
+    "patients": "Patients",
+    "patientdisease": "Patient Treatment",
+    "disease": "Disease"
+  },
+  "list": {
+    "actions": {
+      "title": "Actions",
+      "details": "Details",
+      "edit": "Edit",
+      "delete": "Delete"
+    }
+  },
+  "form": {
+    "actions": {
+      "return": "Return",
+      "edit": "Edit",
+      "cancel": "Cancel"
+    }
+  },
+  "user": {
+    "fields": {
+      "data": "Data",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "birthdate": "Date of birth",
+      "address": "Address",
+      "telephone": "Telephone",
+      "pesel": "Pesel",
+      "password": "Password"
+    },
+    "list": {
+      "title": "List of patients",
+      "addNew": "Add new patient",
+      "noData": "No patients in database",
+      "pageTitle": "List of patients"
+    },
+    "form": {
+      "patientdisease": "History of treatment",
+      "add": {
+        "pageTitle": "Adding a new patient",
+        "btnLabel": "Add the patient",
+        "confirm": {
+          "header": "Confirmation",
+          "text": "The new patient has been successfully created"
+        }
+      },
+      "edit": {
+        "pageTitle": "Editing an patient",
+        "btnLabel": "Save changes",
+        "confirm": {
+          "header": "Confirmation",
+          "text": "The patient has been successfully updated"
+        }
+      }
+    },
+    "details": {
+      "patientdetails": "Patient details",
+      "patientdisease": "History of disease",
+      "nameDisease": "The name of the disease",
+      "description": "Description",
+      "date": "Date of issue",
+      "exemption": "Exemption to",
+      "price": "Visit price",
+      "details": {
+        "pageTitle": "Details",
+        "btnLabel": "Details"
+      }
+    },
+    "profile": {
+      "profile": "Profile details"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2 > <%= pageTitle %> </h2>
+    <table class="table-horizontal" >
+        <tbody>
+        <tr>
+            <td><%= __('user.fields.firstName') %></td>
+            <td><%= loggedUser.imie%></td>
+        </tr>
+
+        <tr>
+            <td ><%= __('user.fields.lastName') %></td>
+            <td><%= loggedUser.nazwisko%></td>
+        </tr>
+        <tr>
+            <td ><%= __('user.fields.birthdate') %></td>
+            <td><%=new Date( new Date(loggedUser.dataUrodzenia).getTime() - ( new Date(loggedUser.dataUrodzenia).getTimezoneOffset() * 60000 )).toISOString().split("T")[0]%> </td>
+        </tr>
+        <tr>
+            <td ><%= __('user.fields.email') %></td>
+            <td><%= loggedUser.email%></td>
+        </tr>
+        <tr>
+            <td ><%= __('user.fields.address') %></td>
+            <td><%= loggedUser.miejsceZamieszkania%></td>
+        </tr>
+        <tr>
+            <td><%= __('user.fields.telephone') %></td>
+            <td><%= loggedUser.telefon%></td>
+        </tr>
+        <tr>
+            <td ><%= __('user.fields.pesel') %></td>
+            <td><%= loggedUser.pesel%></td>
+        </tr>
+        </tbody>
+    </table>
+        <br>
+</main>
+<%- include('../../fragments/footer.ejs') %>

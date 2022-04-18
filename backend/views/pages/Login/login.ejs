@@ -1,0 +1,37 @@
+<%- include('../../fragments/header3.ejs') %>
+<main style="width: 100%; min-height: 200px">
+    <div style="display: none">
+        <span id="errorMessage-required"><%= __('validationMessage.required') %></span>
+        <span id="errorMessage-size"><%= __('validationMessage.size') %></span>
+        <span id="errorMessage-to"><%= __('validationMessage.to') %></span>
+        <span id="errorMessage-characters"><%= __('validationMessage.characters') %></span>
+        <span id="errorMessage-form"><%= __('validationMessage.form') %></span>
+        <span id="errorMessage-email"><%= __('validationMessage.email') %></span>
+    </div>
+    <div class="login">
+<% if(!loggedUser) { %>
+  <div id="login">
+  <h2><%= __('main-page.login') %></h2>
+  <script type="application/javascript" src="/JS/validationLogin.js"> </script>
+  <!--  onsubmit="return validationLogin();"-->
+    <form method ="post" action="/login" novalidate onsubmit="return validationForm();" >
+        <label  for="loginEmail"> <strong> <%= __('login.email') %>: </strong> </label>
+        <input type="email" name="loginEmail" id="loginEmail" placeholder="<%= __('login.placeholderlogin') %>">
+        <span id="errorLogin" class="error-text"> </span>
+
+        <label  for="loginPassword"><strong> <%= __('login.password') %>: </strong></label>
+        <input  type="password" name="loginPassword" id="loginPassword" placeholder="<%= __('login.placeholderpassword') %>">
+        <span id="errorPassword" class="error-text"> </span>
+
+        <div class="button-wrapper">
+        <span id="loginErrors" class="error-text"><%= loginError ? loginError : '' %></span>
+            <br>
+        <input type ="submit" id="submit" value="<%= __('login.loggedin') %>">
+        <br>
+        </div>
+    </form>
+      <%}%>
+  </div>
+  </div>
+</main>
+<%- include('../../fragments/footer.ejs') %>

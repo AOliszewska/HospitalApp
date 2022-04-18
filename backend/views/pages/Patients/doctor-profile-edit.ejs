@@ -1,0 +1,42 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <script type="application/javascript" src="/JS/validationFormPatient.js"></script>
+    <h2 > <%=pageTitle%>  </h2>
+    <form class="form" action="<%=formAction%>" method="post" novalidate onsubmit="return validationForm();">
+            <label for="Imie"> Imię: <span class="symbol-required">*</span></label>
+            <input type="text" name="Imie" id="Imie" <%= users.imie%> >
+            <span id="errorImie" class="error-text"></span>
+
+            <label for="Nazwisko"> Nazwisko: <span class="symbol-required">*</span> </label>
+            <input type="text" name="Nazwisko" id="Nazwisko" <%= users.nazwisko%> >
+            <span id="errorNazwisko" class="error-text"></span>
+
+            <label for="Email"> Email: <span class="symbol-required">*</span> </label>
+            <input type="text" name="Email" id="Email" <%= users.email%> >
+            <span id="errorEmail" class="error-text"></span>
+
+            <label for="miejsceZamieszkania"> Adres Zamieszkania: <span class="symbol-required">*</span> </label>
+            <input type="text" name="miejsceZamieszkania" id="miejsceZamieszkania" <%= users.miejsceZamieszkania%> >
+            <span id="errorAdresZamieszkania" class="error-text"> </span>
+
+            <label for="Telefon"> Telefon: </label>
+            <input type="text" name="Telefon" id="Telefon" <%= users.telefon%>>
+            <span id="errorTelefon" class="error-text"></span>
+
+            <label for="Pesel"> Pesel:  </label>
+            <input type="text" name="Pesel" id="Pesel" <%= users.pesel%> >
+            <span id="errorPesel" class="error-text"></span>
+
+            <label for="dataUrodzenia"> Data Urodzenia: <span class="symbol-required">*</span> </label>
+            <input type="date"  <%= users.dataUrodzenia%> name="dataUrodzenia" id="dataUrodzenia" >
+            <span id="errordataUrodzenia" class="error-text"></span>
+        <div class="button-wrapper">
+        <%if (formMode=='edit') {%>
+        <p id="errorSummary"> </p>
+        <input type="submit" value="<%=btnLabel%>" id="submit" style="color:black"/>
+            <a href="/Pacjenci/myProfil/:userId"> Powrót </a>
+        <%}%>
+    </div>
+    </form>
+</main>
+<%- include('../../fragments/footer.ejs') %>

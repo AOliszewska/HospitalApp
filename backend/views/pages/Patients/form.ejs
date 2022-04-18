@@ -1,0 +1,124 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <div style="display: none">
+        <span id="errorMessage-required"><%= __('validationMessage.required') %></span>
+        <span id="errorMessage-size"><%= __('validationMessage.size') %></span>
+        <span id="errorMessage-to"><%= __('validationMessage.to') %></span>
+        <span id="errorMessage-characters"><%= __('validationMessage.characters') %></span>
+        <span id="errorMessage-number"><%= __('validationMessage.number') %></span>
+        <span id="errorMessage-numberSize"><%= __('validationMessage.numberSize') %></span>
+        <span id="errorMessage-and"><%= __('validationMessage.and') %></span>
+        <span id="errorMessage-date"><%= __('validationMessage.date') %></span>
+        <span id="errorMessage-future"><%= __('validationMessage.future') %></span>
+        <span id="errorMessage-later"><%= __('validationMessage.later') %></span>
+        <span id="errorMessage-form"><%= __('validationMessage.form') %></span>
+        <span id="errorMessage-email"><%= __('validationMessage.email') %></span>
+    </div>
+    <script type="application/javascript" src="/JS/validationFormPatient.js" ></script>
+    <h2 > <%=pageTitle%>  </h2>
+<!--    onsubmit="return validationForm();"-->
+    <form class="form" method="post" novalidate  action="<%=formAction%>" onsubmit="return validationForm();" >
+        <input type="hidden" name="_idUzytkownik"  value="<%=users._idUzytkownik%>">
+
+        <label for="imie"> <%=__('user.fields.firstName')%>  <span class="symbol-required">*</span> </label>
+        <input type="text" name="imie" id="imie"  value="<%=users.imie%>"
+         class="<%=validationErrors.find(e => e.path.includes('imie')) ? 'error-input' : ''%>" required>
+        <span id="errorImie" class="error-text">
+            <%if (validationErrors.find(e => e.path.includes('imie'))) {%>
+                <%= validationErrors.find(e => e.path.includes('imie')).message %>
+            <% } %>
+        </span>
+
+        <label for="nazwisko"> <%=__('user.fields.lastName')%> <span class="symbol-required">*</span>  </label>
+        <input type="text" name="nazwisko" id="nazwisko"  value="<%=users.nazwisko%>"
+        class="<%=validationErrors.find(e => e.path.includes('nazwisko')) ? 'error-input' : ''%>" required>
+        <span id="errorNazwisko" class="error-text">
+            <%if (validationErrors.find(e => e.path.includes('nazwisko'))) {%>
+                <%= validationErrors.find(e => e.path.includes('nazwisko')).message %>
+            <% } %>
+        </span>
+
+        <label for="email">  <%=__('user.fields.email')%>  <span class="symbol-required">*</span>  </label>
+        <input type="text" name="email" id="email" value="<%=users.email%>"
+        class="<%=validationErrors.find(e => e.path.includes('email')) ? 'error-input' : ''%>" required>
+        <span id="errorEmail" class="error-text">
+            <%if (validationErrors.find(e => e.path.includes('email'))) {%>
+                <%= validationErrors.find(e => e.path.includes('email')).message %>
+            <% } %>
+        </span>
+
+        <label for="miejsceZamieszkania">  <%=__('user.fields.address')%>  <span class="symbol-required">*</span> </label>
+        <input type="text" name="miejsceZamieszkania" id="miejsceZamieszkania" value="<%=users.miejsceZamieszkania%>"
+               class="<%=validationErrors.find(e => e.path.includes('miejsceZamieszkania')) ? 'error-input' : ''%>" required>
+        <span id="errorAdresZamieszkania" class="error-text">
+            <%if (validationErrors.find(e => e.path.includes('miejsceZamieszkania'))) {%>
+                <%= validationErrors.find(e => e.path.includes('miejsceZamieszkania')).message %>
+            <% } %>
+         </span>
+
+        <label for="telefon">  <%=__('user.fields.telephone')%> </label>
+        <input type="text" name="telefon" id="telefon" value="<%=users.telefon%>"
+               class="<%=validationErrors.find(e => e.path.includes('telefon')) ? 'error-input' : ''%>" >
+        <span id="errorTelefon" class="error-text">
+            <%if (validationErrors.find(e => e.path.includes('telefon'))) {%>
+                <%= validationErrors.find(e => e.path.includes('telefon')).message %>
+            <% } %>
+        </span>
+
+        <label for="pesel"> <%=__('user.fields.pesel')%>  </label>
+        <input type="text" name="pesel" id="pesel" value="<%=users.pesel%>"
+               class="<%=validationErrors.find(e => e.path.includes('pesel')) ? 'error-input' : ''%>" >
+        <span id="errorPesel" class="error-text">
+            <%if (validationErrors.find(e => e.path.includes('pesel'))) {%>
+                <%= validationErrors.find(e => e.path.includes('pesel')).message %>
+            <% } %>
+        </span>
+
+        <label for="dataUrodzenia">  <%=__('user.fields.birthdate')%>  <span class="symbol-required">*</span> </label>
+        <input type="date"  name="dataUrodzenia" id="dataUrodzenia" value="<%=users.dataUrodzenia%>"
+               class="<%=validationErrors.find(e => e.path.includes('dataUrodzenia')) ? 'error-input' : ''%>" >
+        <span id="errordataUrodzenia" class="error-text">
+            <%if (validationErrors.find(e => e.path.includes('dataUrodzenia'))) {%>
+                <%= validationErrors.find(e => e.path.includes('dataUrodzenia')).message %>
+            <% } %>
+        </span>
+
+        <% if(formMode==='createNew') { %>
+        <label for="haslo"> <%=__('user.fields.password')%>  <span class="symbol-required">*</span> </label>
+        <input type="text"  name="haslo" id="haslo" value="<%=users.haslo%>"
+               class="<%=validationErrors.find(e => e.path.includes('haslo')) ? 'error-input' : ''%>" >
+        <span id="errorhaslo" class="error-text">
+            <%if (validationErrors.find(e => e.path.includes('haslo'))) {%>
+                <%= validationErrors.find(e => e.path.includes('haslo')).message %>
+            <% } %>
+        </span>
+        <% }else {%>
+        <label for="haslo" hidden> <%=__('user.fields.password')%>  <span class="symbol-required">*</span> </label>
+        <input type="hidden" name="haslo" id="haslo" value="przykladowehaslo"
+               class="<%=validationErrors.find(e => e.path.includes('haslo')) ? 'error-input' : ''%>" >
+        <span id="errorhaslo" class="error-text">
+            <%if (validationErrors.find(e => e.path.includes('haslo'))) {%>
+                <%= validationErrors.find(e => e.path.includes('haslo')).message %>
+            <% } %>
+        </span>
+        <% } %>
+        <label for="_idRola" hidden></label>
+        <input type="text" name="_idRola" id="_idRola" value="2"
+               class="<%=validationErrors.find(e => e.path.includes('_idRola')) ? 'error-input' : ''%>" hidden >
+        <span id="errorTelefon" class="error-text">
+            <%if (validationErrors.find(e => e.path.includes('_idRola'))) {%>
+                <%= validationErrors.find(e => e.path.includes('_idRola')).message %>
+            <% } %>
+        </span>
+
+        <div class="button-wrapper">
+            <p id="errorSummary" style="color: #c0392b">
+                <%= validationErrors.length > 0 ?  __('validationMessage.form')   : '' %>
+            </p>
+            <input type="submit" value="<%=btnLabel%>" id="submit" style="color:black"/>
+            <a href="/Pacjenci" ><%=__('form.actions.cancel')%> </a>
+        </div>
+
+    </form>
+</main>
+<%- include('../../fragments/footer.ejs') %>

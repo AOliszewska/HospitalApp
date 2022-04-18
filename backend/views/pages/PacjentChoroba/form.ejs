@@ -1,0 +1,115 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <div style="display: none">
+        <span id="errorMessage-required"><%= __('validationMessage.required') %></span>
+        <span id="errorMessage-size"><%= __('validationMessage.size') %></span>
+        <span id="errorMessage-to"><%= __('validationMessage.to') %></span>
+        <span id="errorMessage-characters"><%= __('validationMessage.characters') %></span>
+        <span id="errorMessage-number"><%= __('validationMessage.number') %></span>
+        <span id="errorMessage-numberSize"><%= __('validationMessage.numberSize') %></span>
+        <span id="errorMessage-and"><%= __('validationMessage.and') %></span>
+        <span id="errorMessage-date"><%= __('validationMessage.date') %></span>
+        <span id="errorMessage-future"><%= __('validationMessage.future') %></span>
+        <span id="errorMessage-later"><%= __('validationMessage.later') %></span>
+        <span id="errorMessage-form"><%= __('validationMessage.form') %></span>
+    </div>
+    <script type="application/javascript" src="/JS/validationForm.js"></script>
+    <h2 > <%=pageTitle %>   </h2>
+    <!--    onsubmit="return validationForm();"-->
+    <form class="form" method="post" novalidate  action="<%=formAction%>" onsubmit="return validationForm();"  >
+        <input type="hidden" name="_idUzytkownikChoroba"  value="<%=users._idUzytkownikChoroba%>">
+
+        <label for="_idUzytkownik"> <%=__('patientdisease.form.details.choose')%> :<span class="symbol-required">*</span> </label>
+        <select  name="_idUzytkownik" id="_idUzytkownik" class="<%=validationErrors.find(e => e.path.includes('_idUzytkownik')) ? 'error-input' : ''%>" >
+            <option value="null" > <%=__('patientdisease.form.details.option')%> </option>
+            <%for (let i=0; i< allPatient.length; i++) { let option= allPatient[i]; %>
+            <option value="<%=option._idUzytkownik%>" label="<%= option.imie + ' '+ option.nazwisko%>"
+                <% if (users.uzytkownik === undefined ) { %>
+                <%= option._idUzytkownik == users._idUzytkownik ? 'selected' : ' ' %>
+                 <% } else { %>
+                <%= option._idUzytkownik == users.uzytkownik._idUzytkownik ? 'selected' : ' ' %>
+                 <% } %>
+           ></option>
+            <% } %>
+        </select>
+        <span id="errorpacjent" class="error-text">
+        <% if (validationErrors.find(e => e.path.includes('_idUzytkownik'))) {%>
+            <%= validationErrors.find(e => e.path.includes('_idUzytkownik')).message %>
+                <% } %>
+        </span>
+
+        <label for="_idChoroba"> <%=__('patientdisease.form.details.choose1')%> :<span class="symbol-required">*</span> </label>
+        <select name="_idChoroba" id="_idChoroba"  class="<%=validationErrors.find(e => e.path.includes('_idChoroba')) ? 'error-input' : ''%>">
+            <option value="null"><%=__('patientdisease.form.details.option1')%></option>
+            <%for (let i=0; i< allDiseases.length; i++) { let option= allDiseases[i]; %>
+            <option value="<%=option._idChoroba %>" label="<%= option.nazwa%>"
+            <% if (users.choroba === undefined ) { %>
+                <%= option._idChoroba == users._idChoroba ? 'selected' : ' ' %>
+            <% } else { %>
+                <%= option._idChoroba == users.choroba._idChoroba ? 'selected' : ' ' %>
+            <% } %>
+            ></option>
+            <% } %>
+        </select>
+        <span id="errorchoroba" class="error-text">
+        <% if (validationErrors.find(e => e.path.includes('_idChoroba'))) {%>
+            <%= validationErrors.find(e => e.path.includes('_idChoroba')).message %>
+                <% } %>
+        </span>
+
+        <label for="opisObjawow"> <%=__('user.details.description')%> : <span class="symbol-required">*</span> </label>
+        <textarea id="opisObjawow" name="opisObjawow" rows="4" cols="22" required class="<%= validationErrors.find(e=> e.path.includes('opisObjawow')) ? 'error-input' : ''%>" ><%=users.opisObjawow%></textarea>
+        <span id="errorobjawy" class="error-text">
+        <% if (validationErrors.find(e => e.path.includes('opisObjawow'))) {%>
+            <%= validationErrors.find(e => e.path.includes('opisObjawow')).message %>
+                <% } %>
+        </span>
+
+        <label for="dataWystawienia"> <%=__('user.details.date')%> :<span class="symbol-required">*</span> </label>
+        <input type="date" name="dataWystawienia" id="dataWystawienia" value="<%=users.dataWystawienia ? users.dataWystawienia : ' '%>"
+               class="<%= validationErrors.find(e=> e.path.includes('dataWystawienia')) ? 'error-input' : ''%>">
+        <span id="errordatawystawienia" class="error-text">
+        <% if (validationErrors.find(e => e.path.includes('dataWystawienia'))) {%>
+            <%= validationErrors.find(e => e.path.includes('dataWystawienia')).message %>
+                <% } %>
+        </span>
+
+        <label for="zwolnienieDo"> <%=__('user.details.exemption')%> :</label>
+        <input type="date" name="zwolnienieDo" id="zwolnienieDo" value="<%=users.zwolnienieDo ? users.zwolnienieDo  : ' '%>"
+               class="<%= validationErrors.find(e=> e.path.includes('zwolnienieDo')) ? 'error-input' : ''%>">
+        <span id="errorzwolnieniedo" class="error-text">
+        <% if (validationErrors.find(e => e.path.includes('zwolnienieDo'))) {%>
+            <%=validationErrors.find(e => e.path.includes('zwolnienieDo')).message %>
+                <% } %>
+        </span>
+
+        <label for="cenaWizyty"><%=__('user.details.price')%> :<span class="symbol-required">*</span> </label>
+        <input type="text" name="cenaWizyty" id="cenaWizyty" value="<%=users.cenaWizyty %>"
+        class="<%= validationErrors.find(e=> e.path.includes('cenaWizyty')) ? 'error-input' : ''%>">
+        <span id="errorcenawizyty" class="error-text">
+        <% if (validationErrors.find(e => e.path.includes('cenaWizyty'))) {%>
+            <%= validationErrors.find(e => e.path.includes('cenaWizyty')).message %>
+                <% } %>
+        </span>
+
+        <%if (formMode!='modify') {%>
+        <div class="button-wrapper">
+            <p id="errorSummary" style="color: #c0392b">
+                <%= validationErrors.length > 0 ?  __('validationMessage.form')   : '' %>
+            </p>
+            <input type="submit" value="<%=btnLabel%>" id="submit" style="color:black"/>
+            <a href="/PacjentChoroba"><%=__('form.actions.cancel')%></a>
+        </div>
+        <%}else {%>
+        <div class="button-wrapper">
+            <p id="errorSummary" style="color: #c0392b">
+                <%= validationErrors.length > 0 ?  __('validationMessage.form')   : '' %>
+            </p>
+            <input type="submit" value="<%=btnLabel%>" id="submit" style="color:black"/>
+            <a href="/PacjentChoroba"> <%=__('form.actions.cancel')%></a>
+        </div>
+
+        <% } %>
+    </form>
+</main>
+<%- include('../../fragments/footer.ejs') %>

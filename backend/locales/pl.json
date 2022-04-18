@@ -1,0 +1,195 @@
+{
+	"main-page": {
+		"content": "Strona główna",
+		"title": "Przychodnia Medyczna",
+		"city" : "Warszawa",
+		"logout": "Wyloguj się",
+		"login": "Zaloguj się",
+		"loggedas": "Jesteś zalogowany jako",
+		"statement":"Komunikaty"
+
+	},
+	"login": {
+		"login": "Logowanie",
+		"email": "Email",
+		"password": "Hasło",
+		"loggedin": "Zaloguj się",
+		"placeholderlogin": "Wprowadź login",
+		"placeholderpassword": "Wprowadź hasło"
+	},
+	"nav": {
+		"profile": "Profil",
+		"patients": "Pacjenci",
+		"patientdisease": "Pacjenci Leczenie",
+		"disease": "Choroby"
+	},
+	"list": {
+		"actions": {
+			"title": "Akcja",
+			"details": "Szczegóły",
+			"edit": "Zmodyfikuj",
+			"delete": "Usuń"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Powrót",
+			"edit": "Edytuj",
+			"cancel": "Anuluj"
+		}
+	},
+	"user": {
+		"fields": {
+			"data": "Dane",
+			"firstName": "Imię",
+			"lastName": "Nazwisko",
+			"email": "Email",
+			"birthdate": "Data Urodzenia",
+			"address": "Miejsce Zamieszkania",
+			"telephone": "Telefon",
+			"pesel": "Pesel",
+			"password": "Hasło"
+		},
+		"list": {
+			"title": "Lista wszystkich pacjentów",
+			"addNew": "Dodaj nowego pacjenta",
+			"noData": "Brak pacjentów w bazie",
+			"pageTitle": "Lista pacjentów"
+		},
+		"form": {
+			"patientdisease": "Historia leczenia",
+			"add": {
+				"pageTitle": "Dodawanie pacjenta",
+				"btnLabel": "Dodaj pacjenta",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie dodano pacjenta"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja pacjenta",
+				"btnLabel": "Zapisz zmiany",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie zaktualizowano pacjenta"
+				}
+			}
+		},
+		"details": {
+			"patientdetails": "Pacjent Szczegóły",
+			"patientdisease": "Historia leczenia",
+			"nameDisease": "Nazwa Choroby",
+			"description": "Opis",
+			"date": "Data wystawienia",
+			"exemption": "Zwolnienie do",
+			"price": "Cena Wizyty",
+			"details": {
+				"pageTitle": "Details",
+				"btnLabel": "Details"
+			}
+		},
+		"profile": {
+			"profile": "Szczegóły profilu"
+		}
+	},
+	"disease": {
+		"fields": {
+			"data": "Dane",
+			"name" : "Nazwa choroby",
+			"descriptionDisease": "Opis choroby",
+			"infectiousDisease" :"Zakaźna"
+		},
+		"list": {
+			"title": "Lista wszystkich chorób",
+			"addNew": "Dodaj nową chorobę",
+			"noData": "Brak chorób w bazie",
+			"pageTitle": "Lista chorób"
+		},
+		"form": {
+			"add": {
+				"pageTitle": "Dodawanie choroby",
+				"btnLabel": "Dodaj chorobę",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie dodano chorobę"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja choroby",
+				"btnLabel": "Zapisz zmiany",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie zaktualizowano chorobę"
+				}
+			}
+		},
+		"details": {
+			"patientdetails": "Pacjent Szczegóły",
+			"patientdisease": "Pacjenci z chorobą",
+			"nameDisease": "Nazwa Choroby",
+			"description": "Opis Objawów",
+			"date": "Data wystawienia",
+			"exemption": "Zwolnienie do",
+			"price": "Cena Wizyty",
+			"details": {
+				"pageTitle": "Details",
+				"btnLabel": "Details"
+			},
+			"chooseoption" : "--wybierz opcje--",
+			"yes": "tak",
+			"no": "nie"
+		}
+	},
+	"patientdisease": {
+		"details": {
+			"medicalResults": "Wyniki badań"
+		},
+
+		"list": {
+			"title": "Lista pacjentów",
+			"addNew": "Dodaj nowe leczenie",
+			"noData": "Brak rekordów w bazie",
+			"pageTitle": "Lista leczenia"
+		},
+		"form": {
+			"details": {
+				"information":"Informacje o pacjencie",
+				"choose": "Wybierz pacjenta",
+				"choose1": "Wybór choroby",
+				"option": "--Wybierz pacjenta--",
+				"option1":"--Wybierz chorobę--"
+			},
+			"add": {
+				"pageTitle": "Dodawanie nowego leczenia",
+				"btnLabel": "Dodaj nowe leczenie",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie dodano leczenie"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja leczenia",
+				"btnLabel": "Edytuj leczenie",
+				"confirm": {
+					"header": "Potwierdzenie",
+					"text": "Pomyślnie dodano leczenie"
+				}
+			}
+		}
+	},
+	"validationMessage" : {
+		"required": "Pole wymagane",
+		"size": "Pole powinno zawierać od ",
+		"to": "do ",
+		"characters": "znaków",
+		"number": "Pole powinno być liczbą",
+		"numberSize": "Pole powinno być liczbą z zakresu od ",
+		"and": "do ",
+		"date": "Pole powinno zawierać datę w formacie rrrr-MM-dd (np. 2000-01-01)",
+		"future": "Data nie moze byc z przyszłości",
+		"later": "Zwolnienie Do powinna być późniejsza niż data Wystawienia",
+		"form" : "Formularz zawiera błędy",
+		"email": "Pole powinno zawierać prawidłowy email",
+		"wrong": "Nieprawidlowy adres email lub hasło"
+	}
+}

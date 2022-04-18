@@ -1,0 +1,28 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+  <h2> Dodawanie nowej Choroby </h2>
+  <form>
+    <label for="nazwa"> Nazwa Choroby <span class="symbol-required">*</span> </label>
+    <input type="text" name="nazwa" id="nazwa" class="error-input" required>
+    <span id="errorNazwa" class="error-text">Nazwa za krótka</span>
+
+
+    <label for="opis"> Opis Choroby: <span class="symbol-required">*</span> </label>
+    <textarea id="opis" name="opis" rows="4" cols="22" required></textarea>
+    <span id="errorOpis" class="error-text">Opis cos tam</span>
+
+    <label for="zakazna"> Zakaźna  <span class="symbol-required"> *</span></label>
+    <select   name="zakazna" id="zakazna" class="error-input">
+      <option> --wybierz opcje-- </option>
+      <option value="1"> tak </option>
+      <option value="2"> nie </option>
+    </select>
+    <span id="errorZakazna" class="error-text">O co chodzi</span>
+
+    <div class="button-wrapper">
+      <input type="submit" value="Dodaj" />
+      <a href="/Choroby"> Powrót </a>
+    </div>
+  </form>
+</main>
+<%- include('../../fragments/footer.ejs') %>

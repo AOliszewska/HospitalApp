@@ -1,0 +1,107 @@
+.button-wrapper {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.button-wrapper a{
+    display: inline-block;
+    background-color: #93d7ff;
+    border: 2px solid #276372;
+    color:black;
+    border-radius: 0.2rem;
+    font-size: 0.85rem;
+    padding: 0.4rem;
+    height: 13px;
+    text-decoration: none;
+}
+
+.button-wrapper a,
+.button-wrapper button,
+.button-wrapper input{
+    display: inline-block;
+}
+
+.button-wrapper button,
+.button-wrapper input {
+    background-color: #93d7ff;
+    border: 2px solid #276372;
+    border-radius: 0.2rem;
+    font-size: 0.85rem;
+    padding: 0.4rem;
+}
+
+.button-wrapper button:hover,
+.button-wrapper input:hover,
+.button-wrapper a:hover{
+    background-color: rgba(55, 185, 222, 0.9);
+}
+
+.table-vertical button{
+    display: block;
+    margin: auto;
+    width: 100%;
+    background-color: #f1cb31;
+}
+
+.table-vertical button:hover {
+    background-color: #ef8e10;
+}
+
+nav .button {
+    background-color: #0069cc;
+    color: white;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    border-style:solid;
+    border-color:#66b3ff;
+    font-size: 16px;
+    width:100%;
+}
+
+nav .button-dis {
+    background-color: #93d7ff;
+    color: white;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    border-color: #ffffff;
+    font-size: 16px;
+    width:100%;
+}
+
+
+nav .button:hover{
+    background-color: #e65c00;
+}
+
+
+@media all and (max-width: 720px){
+    .button-wrapper{
+        padding-top: 0.4rem;
+
+    }
+    .table-vertical{
+        font-size:0.7rem;
+    }
+    .table-vertical button{
+        font-size:0.7rem;
+    }
+    nav .button {
+        width: 50%;
+    }
+}
+
+@media all and (max-width: 400px){
+    .button-wrapper{
+        padding-bottom: 0.7rem;
+
+    }
+    .table-vertical{
+        font-size:0.7rem;
+    }
+    nav .button{
+        text-align: center;
+        width: 100%;
+    }
+}

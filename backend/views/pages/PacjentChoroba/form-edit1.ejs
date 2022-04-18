@@ -1,0 +1,43 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2 > <%=pageTitle%>  </h2>
+    <form class="form" method="post" novalidate onsubmit="return validationForm();" action="<%=formAction%>">
+
+                     <input  name="_idUzytkownikChoroba" id="_idUzytkownikChoroba"  value="<%=users._idUzytkownik%>" >
+
+                     <label for="Imie"> Imię: <span class="symbol-required">*</span> </label>
+                       <input type="text" name="Imie" id="Imie"  value="<%=users.imie%> " required>
+                        <span id="errorImie" class="error-text"></span>
+
+                     <label for="Nazwisko"> Nazwisko: <span class="symbol-required">*</span> </label>
+                      <input type="text" name="Nazwisko" id="Nazwisko" value="<%=users.nazwisko%> "required>
+                        <span id="errorNazwisko" class="error-text"></span>
+
+                      <label for="Email"> Email: <span class="symbol-required">*</span> </label>
+                      <input type="text" name="Email" id="Email"  value="<%=users.email%>"  required>
+                        <span id="errorEmail" class="error-text"></span>
+
+                     <label for="miejsceZamieszkania"> Adres Zamieszkania: <span class="symbol-required">*</span> </label>
+                       <input type="text" name="miejsceZamieszkania" id="miejsceZamieszkania"  value="<%=users.miejsceZamieszkania%>"  required>
+                        <span id="errorAdresZamieszkania" class="error-text"> </span>
+
+                     <label for="Telefon"> Telefon: </label>
+                        <input type="text" name="Telefon" id="Telefon" value="<%=users.telefon%>">
+                        <span id="errorTelefon" class="error-text"></span>
+
+                     <label for="Pesel"> Pesel:  </label>
+                      <input type="text" name="Pesel" id="Pesel" value="<%=users.pesel%>" required>
+                        <span id="errorPesel" class="error-text"></span>
+
+                         <label for="dataUrodzenia"> Data Urodzenia: <span class="symbol-required">*</span> </label>
+                        <input type="date"  name="dataUrodzenia" id="dataUrodzenia" value="<%= users.dataUrodzenia ? users.dataUrodzenia.toISOString().split('T')[0]: ' '%>">
+                     <span id="errordataUrodzenia" class="error-text"></span>
+
+            <div class="button-wrapper">
+                <p id="errorSummary"> </p>
+                <input type="submit" value="Modyfikuj" id =submit />
+                <a href="/PacjentChoroba/details/<%=users._idUzytkownikChoroba%>"> Powrót </a>
+            </div>
+        </form>
+</main>
+<%- include('../../fragments/footer.ejs') %>

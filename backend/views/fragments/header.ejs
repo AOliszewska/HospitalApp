@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title><%= __('main-page.title') %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="/CSS/general.css">
+    <link rel="stylesheet" type="text/css" href="/CSS/form.css">
+    <link rel="stylesheet" type="text/css" href="/CSS/buttons.css">
+    <link rel="stylesheet" type="text/css" href="/CSS/list.css">
+</head>
+<body>
+<header>
+    <img src="/images/hospita.png" id="imghospital" alt="logo">
+    <h1 id="naglowek"><%= __('main-page.title') %></h1>
+    <div>
+        <p> ul.Juliusza Słowackiego 18 <br>  05-840 <%= __('main-page.city') %>  <br> tel. 57272571</p>
+        <button onclick="location.href='/'" > <%= __('main-page.content') %>  </button>
+        <br>
+        <button onclick="location.href='/logout'" > <%= __('main-page.logout') %>  </button>
+        <% if (loggedUser) {%>
+            <p> <%= __('main-page.loggedas') %> : <br> <%=loggedUser.imie + " "+ loggedUser.nazwisko %></p>
+        <% } %>
+        </div>
+</header>
+<nav>
+    <% if (loggedUser && loggedUser.rola===3) { %>
+        <button onclick="location.href='/myProfil'" type="button" class="button"> <%= __('nav.profile') %> </button>
+        <button onclick="location.href='/Patients'" type="button" class="button"> <%= __('nav.patients') %>  </button>
+        <button onclick="location.href='/PacjentChoroba'" type="button" class="button"> <%= __('nav.patientdisease') %>  </button>
+        <button onclick="location.href='/Disease'" type="button" class="button"> <%= __('nav.disease') %>  </button>
+    <% } else if (loggedUser && loggedUser.rola===2) { %>
+        <button onclick="location.href='/myProfil'" class="button"> <%= __('nav.profile') %> </button>
+            <button onclick="location.href='/Disease'" type="button" class="button" >  <%= __('nav.disease') %> </button>
+    <% }else { %>
+        <button onclick="location.href='/Patients/myProfil/:userId'"  class="button-dis" disabled> <%= __('nav.profile') %>  </button>
+        <button onclick="location.href='/Patients'" type="button" class="button-dis" disabled> <%= __('nav.patients') %>  </button>
+        <button onclick="location.href='/PacjentChoroba'" type="button" class="button-dis" disabled><%= __('nav.patientdisease') %>  </button>
+        <button onclick="location.href='/Disease'" type="button" class="button-dis" disabled > <%= __('nav.disease') %> </button>
+    <% } %>
+</nav>

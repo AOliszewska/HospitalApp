@@ -1,0 +1,53 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <h2 > <%= pageTitle %> </h2>
+    <table class="table-horizontal" >
+        <tbody>
+        <tr>
+            <td><%= __('disease.fields.name') %></td>
+            <td><%= diseases.nazwa%></td>
+        </tr>
+
+        <tr>
+            <td><%= __('disease.fields.descriptionDisease') %></td>
+            <td><%= diseases.opis%> </td>
+        </tr>
+        <tr>
+            <td><%= __('disease.fields.infectiousDisease') %></td>
+            <td> <%= diseases.zakazna === 1 ? "tak" : "nie"%> </td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <h2> <%= __('disease.details.patientdisease') %></h2>
+    <table class="table-vertical">
+        <thead>
+        <tr>
+            <th><%= __('disease.fields.data') %></th>
+            <th><%= __('user.fields.firstName') %></th>
+            <th><%= __('user.fields.lastName') %></th>
+            <th><%= __('user.details.date') %></th>
+            <th><%= __('user.details.exemption') %></th>
+            <th><%= __('user.details.description') %></th>
+            <th><%= __('user.details.price') %></th>
+
+        </tr>
+        </thead>
+        <%for (let p of diseases.uzytkownikchoroby ) {%>
+        <tr>
+            <td> <%= p.uzytkownik._idUzytkownik %> </td>
+            <td><%= p.uzytkownik.imie %></td>
+            <td><%= p.uzytkownik.nazwisko %></td>
+            <td><%= p.dataWystawienia ?  p.dataWystawienia.toLocaleDateString().replace('.','-').replace('.','-'): ''%></td>
+            <td><%= p.zwolnienieDo ? p.zwolnienieDo.toLocaleDateString().replace('.','-').replace('.','-'): ''%></td>
+            <td><%= p.opisObjawow %></td>
+            <td><%= p.cenaWizyty %></td>
+        </tr>
+        <% } %>
+    </table>
+    <br>
+    <div class="button-wrapper">
+        <button onclick="location.href='/Disease'"> <%= __('form.actions.return') %>  </button>
+    </div>
+</main>
+<%- include('../../fragments/footer.ejs') %>

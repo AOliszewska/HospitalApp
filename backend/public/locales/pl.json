@@ -1,0 +1,80 @@
+{
+  "main-page": {
+    "content": "Strona główna"
+  },
+  "nav": {
+    "profile": "Profil",
+    "patients": "Pacjenci",
+    "patientdisease": "Pacjenci Leczenie",
+    "disease": "Choroby"
+  },
+  "list": {
+    "actions": {
+      "title": "Akcja",
+      "details": "Szczegóły",
+      "edit": "Zmodyfikuj",
+      "delete": "Usuń"
+    }
+  },
+  "form": {
+    "actions": {
+      "return": "Powrót",
+      "edit": "Edytuj",
+      "cancel": "Anuluj"
+    }
+  },
+  "user": {
+    "fields": {
+      "data": "Dane",
+      "firstName": "Imię",
+      "lastName": "Nazwisko",
+      "email": "Email",
+      "birthdate": "Data Urodzenia",
+      "address": "Miejsce Zamieszkania",
+      "telephone": "Telefon",
+      "pesel": "Pesel",
+      "password": "Hasło"
+    },
+    "list": {
+      "title": "Lista wszystkich pacjentów",
+      "addNew": "Dodaj nowego pacjenta",
+      "noData": "Brak pacjentów w bazie",
+      "pageTitle": "Lista pacjentów"
+    },
+    "form": {
+      "patientdisease": "Historia leczenia",
+      "add": {
+        "pageTitle": "Dodawanie pacjenta",
+        "btnLabel": "Dodaj pacjenta",
+        "confirm": {
+          "header": "Potwierdzenie",
+          "text": "Pomyślnie dodano pacjenta"
+        }
+      },
+      "edit": {
+        "pageTitle": "Edycja pacjenta",
+        "btnLabel": "Zapisz zmiany",
+        "confirm": {
+          "header": "Potwierdzenie",
+          "text": "Pomyślnie zaktualizowano pacjenta"
+        }
+      }
+    },
+    "details": {
+      "patientdetails" : "Pacjent Szczegóły",
+      "patientdisease": "Historia leczenia",
+      "nameDisease": "Nazwa Choroby",
+      "description": "Opis",
+      "date": "Data wystawienia",
+      "exemption": "Zwolnienie do",
+      "price": "Cena Wizyty",
+      "details": {
+        "pageTitle": "Details",
+        "btnLabel": "Details"
+      }
+    },
+    "profile": {
+      "profile": "Szczegóły profilu"
+    }
+  }
+}

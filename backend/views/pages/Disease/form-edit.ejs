@@ -1,0 +1,35 @@
+<%- include('../../fragments/header.ejs') %>
+<main>
+    <script type="application/javascript" src="/JS/validationFormChoroby.js"></script>
+    <h2 > <%=pageTitle%>  </h2>
+    <form class="form" method="post" novalidate onsubmit="return validationForm();" action="<%=formAction%>">
+            <input type="hidden" name="_idChoroba" id="_idChoroba"  value="<%=diseases._idChoroba%>" required >
+
+            <label for="nazwa"> Nazwa Choroby <span class="symbol-required">*</span> </label>
+            <input type="text" name="nazwa" id="nazwa" value="<%=diseases.nazwa%>" required>
+            <span id="errorNazwa" ></span>
+
+            <label for="opis"> Opis Choroby: <span class="symbol-required">*</span> </label>
+            <textarea id="opis" name="opis" rows="4" cols="22" required> <%=diseases.opis%> </textarea>
+            <span id="errorOpis" class="error-text"></span>
+
+            <label for="zakazna"> Zakaźna  <span class="symbol-required"> *</span></label>
+            <select name="zakazna" id="zakazna" >
+                <option value="null"> --wybierz opcje-- </option>
+                <%for (let i=0; i< allOptions.length; i++) { let option= allOptions[i]; %>
+                <option value="<%=option%>" label="<%=option%>"
+                <%= (diseases.zakazna===1? "tak" : "nie") === option ? 'selected': ''%>></option>
+                <% } %>
+            </select>
+            <span id="errorZakazna" class="error-text"></span>
+
+            <div class="button-wrapper">
+                <%if (formMode=='edit') {%>
+                <p id="errorSummary"> </p>
+                <input type="submit" value="<%=btnLabel%>" id="submit" style="color:black"/>
+                <a href="/Choroby" >Anuluj</a>
+                <%}%>
+            </div>
+        </form>
+</main>
+<%- include('../../fragments/footer.ejs') %>
